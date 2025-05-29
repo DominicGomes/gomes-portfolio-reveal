@@ -1,4 +1,3 @@
-
 const Experience = () => {
   const experiences = [
     {
@@ -37,7 +36,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-portfolio-bg">
+    <section id="experience" className="py-20 bg-gradient-to-br from-portfolio-bg via-gray-900/90 to-portfolio-accent/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="font-montserrat font-bold text-4xl lg:text-5xl mb-4">
