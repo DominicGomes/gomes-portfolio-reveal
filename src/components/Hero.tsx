@@ -11,8 +11,11 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-portfolio-bg via-gray-900/80 to-portfolio-accent/20"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Profile Image */}
           <div className="order-2 lg:order-1" data-aos="fade-right">
@@ -20,7 +23,7 @@ const Hero = () => {
               <div className="w-80 h-80 lg:w-96 lg:h-96 mx-auto relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-accent/30 to-transparent rounded-full"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
+                  src="/lovable-uploads/1b3e834e-896d-4f4a-b329-9221345832d6.png"
                   alt="Dominic Gomes"
                   className="w-full h-full object-cover rounded-full border-4 border-portfolio-accent/30"
                 />

@@ -44,7 +44,7 @@ const Tools = () => {
   ];
 
   return (
-    <section id="tools" className="py-20 bg-portfolio-bg">
+    <section id="tools" className="py-20 bg-gradient-to-b from-portfolio-bg to-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="font-montserrat font-bold text-4xl lg:text-5xl mb-4">
