@@ -1,6 +1,6 @@
-
 import { Download, Code, Users, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import SectionHeader from './SectionHeader';
 
 const About = () => {
   const highlights = [
@@ -22,17 +22,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-900/30">
+    <section id="about" className="py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="font-montserrat font-bold text-4xl lg:text-5xl mb-4">
-            About <span className="text-portfolio-accent">Me</span>
-          </h2>
-          <p className="text-lg text-portfolio-text/80 max-w-2xl mx-auto">
-            Get to know more about my background, approach, and what drives me
-          </p>
-        </div>
-
+        <SectionHeader
+          title="About"
+          highlight="Me"
+          subtitle="Get to know more about my background, approach, and what drives me"
+        />        
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* About Text */}
           <div data-aos="fade-right">
@@ -56,17 +52,7 @@ const About = () => {
                 updated with the latest industry trends.
               </p>
             </div>
-
-            {/* Resume Button */}
-            <div className="mt-8">
-              <Button
-                className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
-                onClick={() => window.open('#', '_blank')}
-              >
-                <Download className="w-5 h-5 mr-2" />
-                Download Resume
-              </Button>
-            </div>
+            
           </div>
 
           {/* Highlights */}

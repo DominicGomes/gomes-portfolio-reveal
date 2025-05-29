@@ -20,15 +20,21 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="bg-portfolio-bg text-portfolio-text min-h-screen font-open-sans">
-      <Navigation />
-      <Hero />
-      <Experience />
-      <Projects />
-      <Tools />
-      <About />
-      <Contact />
-      <Footer />
+    <div className="relative bg-portfolio-bg text-portfolio-text min-h-screen font-open-sans overflow-hidden">
+      {/* Full-page gradient background */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-portfolio-bg via-gray-900/80 to-portfolio-accent/20"></div>
+
+      {/* Content wrapper with higher z-index */}
+      <div className="relative z-10">
+        <Navigation />
+        <Hero />
+        <Experience />
+        <Projects />
+        <Tools />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };

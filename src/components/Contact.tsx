@@ -1,10 +1,10 @@
-
 import { useState } from 'react';
 import { Send, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import SectionHeader from './SectionHeader';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -51,17 +51,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-portfolio-bg">
+    <section id="contact" className="py-10">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="font-montserrat font-bold text-4xl lg:text-5xl mb-4">
-            Get In <span className="text-portfolio-accent">Touch</span>
-          </h2>
-          <p className="text-lg text-portfolio-text/80 max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you!
-          </p>
-        </div>
-
+        <SectionHeader
+          title="Get In "
+          highlight="Touch"
+          subtitle="Have a project in mind or want to collaborate? I'd love to hear from you!"
+        />      
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div data-aos="fade-right">

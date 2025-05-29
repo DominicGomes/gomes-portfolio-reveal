@@ -1,51 +1,51 @@
-
 import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Medbook from '/Medbook.png';
+import Lion from '/LionCinema.jpg';
+import Medbox from '/Medbox.png';
+import MediPOS from '/MediPOS.jpg';
+import SectionHeader from './SectionHeader';
 
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Mobile App",
-      description: "A full-featured Android e-commerce application with payment integration, real-time notifications, and offline support.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      playstore: "https://play.google.com/store",
-      appstore: "https://apps.apple.com"
+      title: "Medbook",
+      description: "A comprehensive medicine directory application providing detailed information about medications, dosages, and medical guidance for healthcare professionals and patients.",
+      image: Medbook,
+      playstore: "https://play.google.com/store/apps/details?id=com.pulsetechltd.medbook&hl=en",
+      appstore: "https://apps.apple.com/us/app/medbook-bd/id1641500203"
     },
     {
-      title: "Task Management System",
-      description: "A comprehensive project management web application built with React and Node.js, featuring real-time collaboration.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
-      playstore: "https://play.google.com/store",
-      appstore: "https://apps.apple.com"
+      title: "Medbox",
+      description: "A business-focused medical platform connecting healthcare providers and pharmaceutical businesses with streamlined inventory and distribution management.",
+      image: Medbox,
+      playstore: "https://play.google.com/store/apps/details?id=com.pulsetechltd.medbox&hl=en",
+      appstore: "https://apps.apple.com/us/app/medbox-bd/id1641085153"
     },
     {
-      title: "Weather Forecast App",
-      description: "Cross-platform weather application with location-based forecasts, weather alerts, and beautiful animations.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
-      playstore: "https://play.google.com/store",
-      appstore: "https://apps.apple.com"
+      title: "MediPOS Owner",
+      description: "A comprehensive point-of-sale system designed specifically for medical businesses, featuring inventory management, sales tracking, and business analytics.",
+      image: MediPOS,
+      playstore: "https://play.google.com/store/apps/details?id=com.pulsetechltd.owner&hl=en",
+      appstore: "https://apps.apple.com/us/app/medipos-owner/id1623117486"
     },
     {
-      title: "Social Media Dashboard",
-      description: "Analytics dashboard for social media management with real-time data visualization and automated reporting.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      playstore: "https://play.google.com/store",
-      appstore: "https://apps.apple.com"
+      title: "Lion Cinema",
+      description: "A modern cinema experience platform that redefines movie entertainment with advanced booking systems, seat selection, and enhanced user experience.",
+      image: Lion,
+      playstore: "https://play.google.com/store/apps/details?id=com.pulsetechltd.lion_cinema&hl=en",
+      appstore: "https://apps.apple.com/us/app/lion-cinema/id1644910272"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-900/30">
+    <section id="projects" className="mt-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="font-montserrat font-bold text-4xl lg:text-5xl mb-4">
-            Developed <span className="text-portfolio-accent">Projects</span>
-          </h2>
-          <p className="text-lg text-portfolio-text/80 max-w-2xl mx-auto">
-            A showcase of applications I've built with passion and precision
-          </p>
-        </div>
-
+        <SectionHeader
+          title="Developed"
+          highlight="Projects"
+          subtitle="A showcase of applications I've built with passion and precision"
+        />
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div
@@ -59,45 +59,41 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-48 object-cover bg-gray-900/30 transition-transform duration-300 group-hover:scale-110"
                 />
                 {/* Blur Overlay on Hover */}
-                <div className="absolute inset-0 bg-portfolio-bg/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                  <div className="text-center">
-                    <h3 className="font-montserrat font-bold text-xl mb-2 text-white">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm text-gray-300 mb-4 px-4">
-                      {project.description}
-                    </p>
-                    <div className="flex gap-3 justify-center">
-                      <Button
-                        size="sm"
-                        className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white"
-                        onClick={() => window.open(project.playstore, '_blank')}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-1" />
-                        Playstore
-                      </Button>
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
-                        onClick={() => window.open(project.appstore, '_blank')}
-                      >
-                        <ExternalLink className="w-4 h-4 mr-1" />
-                        App Store
-                      </Button>
-                    </div>
+                <div className="absolute inset-0 bg-portfolio-bg/80 backdrop-blur-sm opacity-100 transition-all duration-300 flex items-center justify-center">                  <div className="text-center">
+                  <h3 className="font-montserrat font-bold text-xl mb-2 text-white">
+                    {project.title}
+                  </h3>                  
+                  <div className="flex gap-3 justify-center">
+                    <Button
+                      size="sm"
+                      className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white"
+                      onClick={() => window.open(project.playstore, '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-1" />
+                      Playstore
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
+                      onClick={() => window.open(project.appstore, '_blank')}
+                    >
+                      <ExternalLink className="w-4 h-4 mr-1" />
+                      App Store
+                    </Button>
                   </div>
+                </div>
                 </div>
               </div>
 
               {/* Project Info (Always Visible) */}
               <div className="p-6">
-                <h3 className="font-montserrat font-bold text-xl mb-2 text-portfolio-text">
+                {/* <h3 className="font-montserrat font-bold text-xl mb-2 text-portfolio-text">
                   {project.title}
-                </h3>
+                </h3> */}
                 <p className="text-portfolio-text/70 text-sm">
                   {project.description}
                 </p>
