@@ -21,7 +21,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-bl from-gray-900/50 via-portfolio-bg to-gray-800/30">
+    <section id="about" className="py-20 bg-gradient-to-br from-gray-900/50 via-portfolio-bg to-gray-800/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="font-montserrat font-bold text-4xl lg:text-5xl mb-4">
