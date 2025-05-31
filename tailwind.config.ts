@@ -67,6 +67,7 @@ export default {
 				'portfolio-bg': '#121212',
 				'portfolio-text': '#E0E0E0',
 				'portfolio-accent': '#3c799e',
+				
 			},
 			fontFamily: {
 				'montserrat': ['Montserrat', 'sans-serif'],

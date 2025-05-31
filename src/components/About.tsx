@@ -35,7 +35,7 @@ const About = () => {
             <h3 className="font-montserrat font-bold text-2xl mb-6 text-portfolio-accent">
               My Journey & Philosophy
             </h3>
-            <div className="space-y-4 text-portfolio-text/80 leading-relaxed">
+            <div className="space-y-4 text-portfolio-text/80 leading-relaxed text-justify">
               <p>
                 My journey in software development began with a curiosity about how things work behind the scenes. 
                 Over the past 2+ years, I've had the privilege of working on diverse projects that have shaped my 

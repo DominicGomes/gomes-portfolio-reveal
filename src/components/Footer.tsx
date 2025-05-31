@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <h3 className="font-montserrat font-bold text-xl text-portfolio-accent">
-              Dominic Gomes
+              Dominic Cleary Gomes
             </h3>
             <p className="text-portfolio-text/60 text-sm">
               Software Engineer • Building the future, one line at a time
@@ -16,7 +16,7 @@ const Footer = () => {
           
           <div className="text-center md:text-right">
             <p className="text-portfolio-text/60 text-sm">
-              © {currentYear} Dominic Gomes. All rights reserved.
+              © {currentYear} Dominic Cleary Gomes. All rights reserved.
             </p>
             <p className="text-portfolio-text/60 text-xs mt-1">
               Built with React, TypeScript & Tailwind CSS

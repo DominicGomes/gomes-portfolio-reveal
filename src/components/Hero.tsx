@@ -1,6 +1,8 @@
 import { ChevronDown, Download, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import heroImg from '/Picsart_25-05-22_11-18-36-462-fotor-bg-remover-20250524171354.png'
+import ConsoleText from '@/ConsoleText'; // Adjust the path as needed
+import heroImg from '/Picsart_25-05-22_11-18-36-462-fotor-bg-remover-20250524171354.png';
+
 const Hero = () => {
   const scrollToExperience = () => {
     const element = document.getElementById('experience');
@@ -12,7 +14,6 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
       {/* Gradient Background */}
-
       {/* Content container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -23,7 +24,7 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-accent/30 to-transparent rounded-full"></div>
                 <img
                   src={heroImg}
-                  alt="Dominic Gomes"
+                  alt="Dominic Cleary Gomes"
                   className="w-full h-full object-cover rounded-full border-4 border-portfolio-accent/30"
                 />
               </div>
@@ -33,9 +34,14 @@ const Hero = () => {
           {/* Hero Text */}
           <div className="order-1 lg:order-2 text-center lg:text-left" data-aos="fade-left" data-aos-delay="200">
             <h1 className="font-montserrat font-bold text-4xl lg:text-6xl mb-6">
-              Hi, I'm <span className="text-portfolio-accent">Dominic Gomes</span>
+              <ConsoleText
+                prefix="Hi, I'm"
+                highlightText=" Dominic Cleary Gomes"
+                id="text"
+                highlightClass="text-portfolio-accent"
+              />
             </h1>
-            <p className="text-lg lg:text-xl mb-8 leading-relaxed text-portfolio-text/90">
+            <p className="text-lg lg:text-xl mb-8 leading-relaxed text-portfolio-text/90 text-justify">
               I'm a dedicated Software Engineer with over 2+ years of experience in building robust and user-focused solutions.
               Specializing in Android development and back-end web development, I have a proven track record of delivering
               high-quality, scalable applications.
@@ -45,16 +51,14 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start flex-wrap gap-4">
               <Button
                 onClick={scrollToExperience}
-                className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
-              >
+                className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
                 <Briefcase className="w-4 h-4" />
                 Explore My Work
               </Button>
 
               <Button
                 onClick={() => window.open('/resume.pdf', '_blank')}
-                className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center gap-2"
-              >
+                className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <Download className="w-4 h-4" />
                 Resume
               </Button>
@@ -68,7 +72,6 @@ const Hero = () => {
         <ChevronDown className="w-6 h-6 text-portfolio-accent" />
       </div>
     </section>
-
   );
 };
 

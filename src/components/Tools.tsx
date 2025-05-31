@@ -54,8 +54,7 @@ const Tools = () => {
               key={index}
               className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%] max-w-xs group bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700/50 hover:border-portfolio-accent/50 transition-all duration-300 hover:transform hover:scale-105"
               data-aos="fade-up"
-              data-aos-delay={index * 100}
-            >
+              data-aos-delay={index * 100} >
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                 {tool.icon}
               </div>

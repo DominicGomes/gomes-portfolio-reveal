@@ -50,7 +50,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="group relative bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-portfolio-accent/50 transition-all duration-300"
+              className="group relative bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 hover:border-portfolio-accent/50 transition-all duration-300 hover:border-portfolio-accent/60 hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)]"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -94,7 +94,7 @@ const Projects = () => {
                 {/* <h3 className="font-montserrat font-bold text-xl mb-2 text-portfolio-text">
                   {project.title}
                 </h3> */}
-                <p className="text-portfolio-text/70 text-sm">
+                <p className="text-portfolio-text/70 text-sm text-center">
                   {project.description}
                 </p>
               </div>

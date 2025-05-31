@@ -142,7 +142,7 @@ const Contact = () => {
               <h3 className="font-montserrat font-bold text-xl mb-4 text-portfolio-accent">
                 Let's Connect
               </h3>
-              <p className="text-portfolio-text/80 mb-6 leading-relaxed">
+              <p className="text-portfolio-text/80 mb-6 leading-relaxed text-justify">
                 I'm always open to discussing new opportunities, interesting projects, 
                 or just having a friendly chat about technology and development.
               </p>
