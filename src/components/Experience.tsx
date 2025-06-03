@@ -34,9 +34,8 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className={`relative flex flex-col lg:flex-row items-start mb-16 ${
-                index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
-              }`}
+              className={`relative flex flex-col lg:flex-row items-start mb-16 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''
+                }`}
               data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
             >
               {/* Timeline Dot */}
@@ -44,7 +43,7 @@ const Experience = () => {
 
               {/* Content Card */}
               <div className={`mt-8 lg:mt-0 lg:w-[48%] ${index % 2 === 0 ? 'lg:mr-12' : 'lg:ml-12'}`}>
-                <div className="bg-gray-800/60 backdrop-blur-md rounded-2xl p-6 md:p-8 border border-gray-700/50 transition duration-300 ease-in-out hover:scale-[1.02] hover:border-portfolio-accent/60 hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)]">
+                <div className="bg-gray-800/60 backdrop-blur-md rounded-lg p-6 md:p-8 border border-gray-700/50 hover:border-portfolio-accent/60 hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)]">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
                     <h3 className="font-montserrat font-bold text-xl sm:text-2xl text-portfolio-accent">
                       {exp.title}

@@ -40,7 +40,7 @@ const Tools = () => {
   ];
 
   return (
-    <section id="tools" className="py-20">
+    <section id="tools" className="mt-20 py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Tools I"
@@ -52,7 +52,7 @@ const Tools = () => {
           {tools.map((tool, index) => (
             <div
               key={index}
-              className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%] max-w-xs group bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700/50 hover:border-portfolio-accent/50 transition-all duration-300 hover:transform hover:scale-105"
+              className="w-full sm:w-[45%] md:w-[30%] lg:w-[22%] max-w-xs group bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700/50 hover:border-portfolio-accent/50 transition-all duration-300 hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)] transform hover:scale-110"
               data-aos="fade-up"
               data-aos-delay={index * 100} >
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
