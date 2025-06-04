@@ -1,6 +1,6 @@
 import { ChevronDown, Download, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ConsoleText from '@/ConsoleText'; // Adjust the path as needed
+import ConsoleText from '@/components/Contents/ConsoleText'; // Adjust the path as needed
 import heroImg from '/Picsart_25-05-22_11-18-36-462-fotor-bg-remover-20250524171354.png';
 
 const Hero = () => {

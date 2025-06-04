@@ -64,8 +64,7 @@ const Navigation = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`text-portfolio-text hover:text-portfolio-accent transition-colors duration-300 font-medium ${
                     activeSection === item.id ? 'text-portfolio-accent border-b-2 border-portfolio-accent' : ''
-                  }`}
-                >
+                  }`}>
                   {item.label}
                 </button>
               ))}
