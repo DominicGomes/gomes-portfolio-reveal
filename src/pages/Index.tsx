@@ -9,6 +9,7 @@ import Tools from '../components/Tools';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
+
 const Index = () => {
   useEffect(() => {
     AOS.init({
