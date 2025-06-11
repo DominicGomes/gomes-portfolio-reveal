@@ -51,17 +51,19 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start flex-wrap gap-4">
               <Button
                 onClick={scrollToExperience}
-                className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+                className="text-portfolio-accent border border-portfolio-accent rounded-md font-semibold bg-gradient-to-tr from-portfolio-accent/30 to-transparent hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm px-8 py-3">
                 <Briefcase className="w-4 h-4" />
                 Explore My Work
               </Button>
 
               <Button
-                onClick={() => window.open('/resume.pdf', '_blank')}
-                className="bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center gap-2">
+                onClick={() => window.open('/RESUME.pdf', '_blank')}
+                className="text-portfolio-accent border border-portfolio-accent rounded-md font-semibold bg-gradient-to-tr from-portfolio-accent/30 to-transparent hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm px-6 py-3"
+              >
                 <Download className="w-4 h-4" />
                 Resume
               </Button>
+
             </div>
           </div>
         </div>

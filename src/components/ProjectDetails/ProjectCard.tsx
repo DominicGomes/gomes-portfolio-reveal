@@ -10,13 +10,14 @@ interface ProjectCardProps {
     appstore: string;
   };
   index: number;
+  openModal: () => void;
 }
 
-const ProjectCard = ({ project, index }: ProjectCardProps) => {
+const ProjectCard = ({ project, index, openModal }: ProjectCardProps) => {
   return (
     <div
       className="group relative"
-      data-aos="flip-up"
+      data-aos="zoom-in"
       data-aos-delay={index * 100}
     >
       <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-portfolio-accent/60 group-hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)] transition-all duration-500 ease-in-out">
@@ -28,15 +29,24 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             className="w-full h-48 object-cover bg-gray-900/30 transition-transform duration-300 group-hover:scale-110"
           />
           {/* Hover Overlay */}
-          <div className="absolute inset-0 bg-portfolio-bg/80 backdrop-blur-sm opacity-100 transition-all duration-300 flex items-center justify-center pointer-events-none">
+          <div className="absolute inset-0 bg-portfolio-bg/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center pointer-events-none">
             <div className="text-center pointer-events-auto">
               <h3 className="font-montserrat font-bold text-xl mb-2 text-white">{project.title}</h3>
               <div className="flex gap-3 justify-center">
+                {/* <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
+                  onClick={openModal}
+                >
+                  <Icon icon="material-icon-theme:folder-review-open" />
+                  View Details
+                </Button> */}
                 <Button
                   size="sm"
                   variant="outline"
                   className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
-                  onClick={() => window.open(project.playstore, "_blank")}
+                  onClick={() => window.open(project.playstore, '_blank')}
                 >
                   <Icon icon="logos:google-play-icon" />
                   Playstore
@@ -45,7 +55,7 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
                   size="sm"
                   variant="outline"
                   className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
-                  onClick={() => window.open(project.appstore, "_blank")}
+                  onClick={() => window.open(project.appstore, '_blank')}
                 >
                   <Icon icon="logos:apple-app-store" />
                   App Store

@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Send, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import SectionHeader from './SectionHeader';
-
+import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -13,7 +14,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  const { toast } = useToast();
+  // const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -22,36 +23,44 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        title: "Error",
-        description: "Please fill in all required fields.",
-        variant: "destructive"
-      });
-      return;
-    }
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+  if (!formData.name || !formData.email || !formData.message) {
+    useEffect(() => {
+    toast.error('Please fill in all required fields.');
+  }, []);
+    return;
+  }
 
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
-  };
+  try {
+    await emailjs.send(
+      'dominic_gomes',      
+      'template_677sw3e',     
+      {
+        from_name: formData.name,
+        reply_to: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      },
+      'K6n6cZgLK3ukzK_2W' 
+    );
+
+    useEffect(() => {
+    toast.info('Thank you! Your message has been sent successfully.');
+  }, []);
+
+    setFormData({ name: '', email: '', subject: '', message: '' });
+  } catch (error) {
+    useEffect(() => {
+    toast.error('Something went wrong. Please try again later.');
+  }, []);
+  }
+};
+
 
   return (
-    <section id="contact" className="mt-20 py-10">
+    <section id="contact" className="mt-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="Get In "
@@ -150,12 +159,12 @@ const Contact = () => {
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-portfolio-text mb-2">Email</h4>
-                  <p className="text-portfolio-text/70">dominic.gomes@example.com</p>
+                  <p className="text-portfolio-text/70">dominicgomes24@gmail.com</p>
                 </div>
                 
                 <div>
                   <h4 className="font-semibold text-portfolio-text mb-2">Location</h4>
-                  <p className="text-portfolio-text/70">Available for remote work worldwide</p>
+                  <p className="text-portfolio-text/70">147/ J East Rajabaza, Farmgate, Dhaka</p>
                 </div>
               </div>
             </div>

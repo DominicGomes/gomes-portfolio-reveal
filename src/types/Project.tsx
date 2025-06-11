@@ -1,12 +1,15 @@
 export interface Project {
-  id: number;
+  id: string;
   title: string;
   description: string;
   longDescription: string;
   image: string;
+  images?: string[];
+  category: 'web' | 'android';
   technologies: string[];
-  type: 'web' | 'android';
-  githubUrl: string;
-  liveUrl?: string;
+  features?: string[];
+  appStoreUrl?: string;
   playStoreUrl?: string;
+  contributions?: string[];
+  highlightColorClass?: string;
 }
