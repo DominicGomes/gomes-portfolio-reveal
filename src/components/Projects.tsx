@@ -1,10 +1,10 @@
+import React, { useEffect, useState } from 'react';
 import Lion from '/LionCinema.jpg';
 import Medbox from '/medboxImg.png';
 import MediPOS from '/MediPos.png';
 import SectionHeader from './SectionHeader';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectDetails/ProjectCard';
 import ProjectModal from './ProjectDetails/ProjectModal';
@@ -33,14 +33,12 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  React.useEffect(() => {
-    if (typeof window !== "undefined" && window.AOS) {
-      window.AOS.init({
-        duration: 800,
-        once: true,
-        delay: 0 // Explicitly set to zero
-      });
-    }
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      delay: 0 // Explicitly set to zero
+    });
   }, []);
 
   const projects = [

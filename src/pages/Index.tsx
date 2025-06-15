@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import AOS from 'aos';
 import Navigation from '../components/Navigation';
@@ -11,18 +10,15 @@ import Footer from '../components/Footer';
 import Education from '@/components/Education';
 import { SparklesCore } from '@/components/ui/sparkles';
 
-
 const Index = () => {
   useEffect(() => {
     // Remove any delay from AOS initialization
-    if (typeof window !== "undefined" && window.AOS) {
-      window.AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100,
-        delay: 0 // Explicitly set to zero
-      });
-    }
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+      delay: 0 // Explicitly set to zero
+    });
   }, []);
 
   return (

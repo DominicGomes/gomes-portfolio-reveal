@@ -1,4 +1,8 @@
+import React, { useEffect } from "react";
 import SectionHeader from "./SectionHeader";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Experience = () => {
   const experiences = [
     {
@@ -20,16 +24,14 @@ const Experience = () => {
     },
   ];
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Remove any delay from AOS initialization
-    if (typeof window !== "undefined" && window.AOS) {
-      window.AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100,
-        delay: 0 // Explicitly set to zero
-      });
-    }
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100,
+      delay: 0 // Explicitly set to zero
+    });
   }, []);
 
   return (
