@@ -1,3 +1,4 @@
+
 import { ChevronDown, Download, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ConsoleText from '@/components/Contents/ConsoleText'; // Adjust the path as needed
@@ -54,14 +55,16 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start flex-wrap gap-4">
               <Button
                 onClick={scrollToExperience}
-                className="text-portfolio-accent border border-portfolio-accent rounded-md font-semibold bg-gradient-to-tr from-portfolio-accent/30 to-transparent hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm px-8 py-3">
+                variant="outline"
+                className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white transition-colors duration-300">
                 <Briefcase className="w-4 h-4" />
                 Explore My Work
               </Button>
 
               <Button
                 onClick={() => window.open('/RESUME.pdf', '_blank')}
-                className="text-portfolio-accent border border-portfolio-accent rounded-md font-semibold bg-gradient-to-tr from-portfolio-accent/30 to-transparent hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm px-6 py-3"
+                variant="outline"
+                className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white transition-colors duration-300"
               >
                 <Download className="w-4 h-4" />
                 Resume

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Send, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -66,6 +65,7 @@ const Contact = () => {
           {/* Contact Form */}
           <div data-aos="fade-right" className="order-2 lg:order-1">
             <form onSubmit={handleSubmit} className="space-y-6">
+              
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-portfolio-text mb-2">
@@ -142,6 +142,7 @@ const Contact = () => {
 
           {/* Contact Info & Social */}
           <div className="space-y-6 lg:space-y-8 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="200">
+            
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50">
               <h3 className="font-montserrat font-bold text-xl mb-4 text-portfolio-accent">
                 Let's Connect

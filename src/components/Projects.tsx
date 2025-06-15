@@ -168,7 +168,7 @@ const Projects = () => {
          <div className="mt-10 text-right">
           <Link
             to="/project-details"
-            className="inline-block px-4 py-2 text-portfolio-accent border border-portfolio-accent rounded-md font-semibold shadow-md hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm">
+            className="inline-block px-6 py-2 text-portfolio-accent border border-portfolio-accent rounded-md font-semibold hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm">
             See More
           </Link>
 
