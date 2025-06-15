@@ -1,4 +1,3 @@
-
 import Lion from '/LionCinema.jpg';
 import Medbox from '/medboxImg.png';
 import MediPOS from '/MediPos.png';
@@ -34,11 +33,14 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-    });
+  React.useEffect(() => {
+    if (typeof window !== "undefined" && window.AOS) {
+      window.AOS.init({
+        duration: 800,
+        once: true,
+        delay: 0 // Explicitly set to zero
+      });
+    }
   }, []);
 
   const projects = [

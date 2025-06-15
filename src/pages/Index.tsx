@@ -14,11 +14,15 @@ import { SparklesCore } from '@/components/ui/sparkles';
 
 const Index = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100,
-    });
+    // Remove any delay from AOS initialization
+    if (typeof window !== "undefined" && window.AOS) {
+      window.AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        delay: 0 // Explicitly set to zero
+      });
+    }
   }, []);
 
   return (
@@ -48,5 +52,4 @@ const Index = () => {
     </div>
   );
 };
-
 export default Index;

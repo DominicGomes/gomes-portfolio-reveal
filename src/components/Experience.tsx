@@ -20,6 +20,18 @@ const Experience = () => {
     },
   ];
 
+  React.useEffect(() => {
+    // Remove any delay from AOS initialization
+    if (typeof window !== "undefined" && window.AOS) {
+      window.AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100,
+        delay: 0 // Explicitly set to zero
+      });
+    }
+  }, []);
+
   return (
     <section id="experience" className="mt-20 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

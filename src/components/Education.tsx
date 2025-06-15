@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { GraduationCap } from "lucide-react";
 import EducationCard from "./EducationCard";
@@ -39,12 +40,16 @@ const educationData: EducationEntry[] = [
 
 const Education = () => {
     useEffect(() => {
-        AOS.init({
+        // Remove any delay from AOS initialization
+        if (typeof window !== "undefined" && window.AOS) {
+          window.AOS.init({
             duration: 600,
             easing: 'ease-in-out',
             once: true,
-            offset: 50
-        });
+            offset: 50,
+            delay: 0 // Explicitly set to zero
+          });
+        }
     }, []);
 
     return (
@@ -70,5 +75,4 @@ const Education = () => {
         </section>
     );
 };
-
 export default Education;
