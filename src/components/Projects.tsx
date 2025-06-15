@@ -1,3 +1,4 @@
+
 import Lion from '/LionCinema.jpg';
 import Medbox from '/medboxImg.png';
 import MediPOS from '/MediPos.png';
@@ -12,7 +13,7 @@ import lionCinema1 from '/lionCinema1.png';
 import lionCinema2 from '/lionCinema2.png';
 import lionCinema3 from '/lionCinema3.png';
 import lionCinema4 from '/lionCinema4.png';
-import medbox1 from '/medbox.png';
+import medbox1 from '/medboxImg.png';
 import medbox2 from '/medbox2.png';
 import medbox3 from '/medbox3.png';
 import medbox4 from '/medbox4.png';

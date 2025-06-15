@@ -21,7 +21,7 @@ import erpImg6 from '/erp6.png';
 import lionCinema from '/lionCinema1.png';
 import lionCinema2 from '/lionCinema2.png';
 import lionCinema3 from '/lionCinema3.png';
-import medbox1 from '/medbox.png';
+import medbox1 from '/medboxImg.png';
 import medbox2 from '/medbox2.png';
 import medbox3 from '/medbox3.png';
 import medbox4 from '/medbox4.png';
@@ -36,6 +36,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Aos from 'aos';
 import { SparklesCore } from '../ui/sparkles';
+
 const projects: Project[] = [
   {
     id: "1",
