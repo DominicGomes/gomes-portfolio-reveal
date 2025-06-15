@@ -25,12 +25,11 @@ const Experience = () => {
   ];
 
   useEffect(() => {
-    // Remove any delay from AOS initialization
     AOS.init({
       duration: 1000,
       once: true,
       offset: 100,
-      delay: 0 // Explicitly set to zero
+      delay: 0 
     });
   }, []);
 
