@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Icon } from "@iconify/react";
 
@@ -34,6 +33,15 @@ const ProjectCard = ({ project, index, openModal }: ProjectCardProps) => {
             <div className="text-center pointer-events-auto">
               <h3 className="font-montserrat font-bold text-xl mb-2 text-white">{project.title}</h3>
               <div className="flex gap-3 justify-center">
+                {/* <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
+                  onClick={openModal}
+                >
+                  <Icon icon="material-icon-theme:folder-review-open" />
+                  View Details
+                </Button> */}
                 <Button
                   size="sm"
                   variant="outline"
