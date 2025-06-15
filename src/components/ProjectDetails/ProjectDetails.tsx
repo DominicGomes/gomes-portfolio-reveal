@@ -35,13 +35,14 @@ import { Navigation, Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Aos from 'aos';
+import { SparklesCore } from '../ui/sparkles';
 const projects: Project[] = [
   {
     id: "1",
     title: "ERP",
     description: "An ERP solution for financial services.",
     longDescription:
-      "A comprehensive fintech software platform to manage and streamline all aspects of the financial services. This project is made with the MVC 5 architectural pattern, separating concerns into Models, Views, and Controllers.",
+      "A comprehensive ERP solution to manage and streamline all aspects of the financial services. This project is made with the MVC 5 architectural pattern, separating concerns into Models, Views, and Controllers.",
     image: erpImg,
     images: [erpImg0, erpImg1, erpImg2, erpImg3, erpImg4, erpImg5, erpImg6],
     category: "web",
@@ -143,16 +144,13 @@ interface ProjectCardProps {
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, delay }) => (
-<div
-  className="group cursor-pointer hover-scale"
-  data-aos="zoom-in"
-  data-aos-delay={delay}
-  onClick={onClick}
->
-
-
-
-    <div className="bg-gray-800/60 backdrop-blur-md rounded-lg overflow-hidden border border-gray-700/50 hover:border-portfolio-accent/60 transition-all duration-300 hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)]">
+  <div
+    className="group cursor-pointer hover-scale"
+    data-aos="zoom-in"
+    data-aos-delay={delay}
+    onClick={onClick}
+  >
+    <div className="bg-gray-800/60 backdrop-blur-md rounded-lg overflow-hidden border border-gray-700/50 hover:border-portfolio-accent/60 transition-all duration-300 hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)] will-change-transform preserve-3d">
       <div className="relative overflow-hidden h-48">
         <img
           src={project.image}
@@ -471,7 +469,7 @@ const ProjectDetails: React.FC = () => {
   const filteredProjects = projects.filter((project) =>
     activeTab === 'web' ? !project.playStoreUrl : !!project.playStoreUrl
   );
-useEffect(() => {
+  useEffect(() => {
     Aos.init({
       duration: 800,
       once: true,
@@ -479,6 +477,15 @@ useEffect(() => {
   }, []);
   return (
     <div className="relative bg-portfolio-bg text-portfolio-text min-h-screen font-open-sans overflow-hidden">
+      <SparklesCore
+        id="tsparticlesfullpage"
+        background="transparent"
+        minSize={0.6}
+        maxSize={1.4}
+        particleDensity={120}
+        className="absolute inset-0 w-full h-full z-10"
+        particleColor="#FFFFFF"
+      />
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-portfolio-bg via-gray-900/80 to-portfolio-accent/20"></div>
 

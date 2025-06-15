@@ -36,9 +36,8 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className={`relative flex flex-col lg:flex-row items-start mb-16 ${
-                index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-              }`}
+              className={`relative flex flex-col lg:flex-row items-start mb-16 ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
+                }`}
               data-aos={index % 2 === 0 ? "fade-right" : "fade-left"}
             >
               {/* Timeline Dot */}
@@ -46,11 +45,10 @@ const Experience = () => {
 
               {/* Content Card with Hover Effects */}
               <div
-                className={`mt-8 lg:mt-0 lg:w-[48%] ${
-                  index % 2 === 0 ? "lg:mr-12" : "lg:ml-12"
-                }`}
+                className={`mt-8 lg:mt-0 lg:w-[48%] ${index % 2 === 0 ? "lg:mr-12" : "lg:ml-12"
+                  }`}
               >
-                <div className="group relative bg-gray-800/60 backdrop-blur-md rounded-lg p-6 md:p-8 border border-gray-700/50 hover:border-portfolio-accent/60 transition-all duration-500 hover:scale-105 hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)]">
+                <div className="group relative bg-gray-800/60 backdrop-blur-md rounded-lg p-6 md:p-8 border border-gray-700/50 hover:border-portfolio-accent/60 transition-transform duration-500 hover:scale-105 hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)] will-change-transform preserve-3d">
                   {/* Glowing border animation layer */}
                   {/* <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-purple-500/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-pulse z-0"></div> */}
 

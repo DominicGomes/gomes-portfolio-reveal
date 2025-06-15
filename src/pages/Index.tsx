@@ -9,6 +9,7 @@ import Tools from '../components/Tools';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Education from '@/components/Education';
+import { SparklesCore } from '@/components/ui/sparkles';
 
 
 const Index = () => {
@@ -24,7 +25,15 @@ const Index = () => {
     <div className="relative bg-portfolio-bg text-portfolio-text min-h-screen font-open-sans overflow-hidden">
       {/* Full-page gradient background */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-portfolio-bg via-gray-900/80 to-portfolio-accent/20"></div>
-
+      <SparklesCore
+          id="tsparticlesfullpage"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={120}
+          className="absolute inset-0 w-full h-full z-10"
+          particleColor="#FFFFFF"
+        />
       {/* Content wrapper with higher z-index */}
       <div className="relative z-10">
         <Navigation />

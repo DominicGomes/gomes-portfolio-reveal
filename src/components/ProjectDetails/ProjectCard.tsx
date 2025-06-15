@@ -20,7 +20,7 @@ const ProjectCard = ({ project, index, openModal }: ProjectCardProps) => {
       data-aos="zoom-in"
       data-aos-delay={index * 100}
     >
-      <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-portfolio-accent/60 group-hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)] transition-all duration-500 ease-in-out">
+      <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg overflow-hidden border border-gray-700/50 group-hover:border-portfolio-accent/60 group-hover:shadow-[0_4px_15px_rgba(60,121,158,0.6)] transition-all duration-500 ease-in-out will-change-transform preserve-3d">
         {/* Image */}
         <div className="relative overflow-hidden">
           <img

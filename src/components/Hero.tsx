@@ -20,14 +20,17 @@ const Hero = () => {
           {/* Profile Image */}
           <div className="order-2 lg:order-1" data-aos="fade-right">
             <div className="relative">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 mx-auto relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-accent/30 to-transparent rounded-full"></div>
-                <img
-                  src={heroImg}
-                  alt="Dominic Cleary Gomes"
-                  className="w-full h-full object-cover rounded-full border-4 border-portfolio-accent/30"
-                />
+              <div className='w-80 h-80 backdrop-blur-sm lg:w-96 lg:h-96 mx-auto rounded-full overflow-hidden shadow-lg'>
+                <div className="w-80 h-80 lg:w-96 lg:h-96 mx-auto relative ">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-portfolio-accent/30 rounded-full"></div>
+                  <img
+                    src={heroImg}
+                    alt="Dominic Cleary Gomes"
+                    className="w-full h-full object-cover rounded-full border-4 border-portfolio-accent/30"
+                  />
+                </div>
               </div>
+
             </div>
           </div>
 

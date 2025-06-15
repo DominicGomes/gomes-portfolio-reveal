@@ -11,7 +11,7 @@ const Navigation = () => {
       setScrolled(window.scrollY > 50);
 
       // Determine active section
-      const sections = ['home', 'experience', 'projects', 'tools', 'about', 'contact'];
+      const sections = ['home', 'experience', 'projects', 'tools', 'education', 'contact'];
       let currentSection = '';
       
       for (const section of sections) {
@@ -45,7 +45,7 @@ const Navigation = () => {
     { label: 'Experience', id: 'experience' },
     { label: 'Projects', id: 'projects' },
     { label: 'Tools', id: 'tools' },
-    { label: 'About', id: 'about' },
+    { label: 'Education', id: 'education' },
     { label: 'Contact', id: 'contact' },
   ];
 

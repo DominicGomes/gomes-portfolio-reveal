@@ -48,7 +48,7 @@ const Education = () => {
     }, []);
 
     return (
-        <section className="mt-20 py-10">
+        <section id="education" className="mt-20 py-10">
             <div className="max-w-4xl mx-auto">
                 <SectionHeader
                     title="Educational "
