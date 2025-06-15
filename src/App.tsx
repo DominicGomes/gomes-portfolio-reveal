@@ -17,6 +17,9 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Apply dark theme to HTML element
+    document.documentElement.classList.add('dark');
+    
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
