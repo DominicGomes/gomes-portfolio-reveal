@@ -10,7 +10,7 @@ const InlineLoader = ({ size = 24 }: InlineLoaderProps) => {
     <Player
       autoplay
       loop
-      src="/loading-animation.json"
+      src="/save-loading.json"
       style={{ height: `${size}px`, width: `${size}px` }}
     />
   );
