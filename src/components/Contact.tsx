@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
+
+import { useState } from 'react';
 import { Send, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/hooks/use-toast';
 import SectionHeader from './SectionHeader';
 import emailjs from 'emailjs-com';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -14,7 +15,6 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  // const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -24,40 +24,32 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!formData.name || !formData.email || !formData.message) {
-    useEffect(() => {
-    toast.error('Please fill in all required fields.');
-  }, []);
-    return;
-  }
+    if (!formData.name || !formData.email || !formData.message) {
+      toast.error('Please fill in all required fields.');
+      return;
+    }
 
-  try {
-    await emailjs.send(
-      'dominic_gomes',      
-      'template_677sw3e',     
-      {
-        from_name: formData.name,
-        reply_to: formData.email,
-        subject: formData.subject,
-        message: formData.message
-      },
-      'K6n6cZgLK3ukzK_2W' 
-    );
+    try {
+      await emailjs.send(
+        'dominic_gomes',      
+        'template_677sw3e',     
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        },
+        'K6n6cZgLK3ukzK_2W' 
+      );
 
-    useEffect(() => {
-    toast.info('Thank you! Your message has been sent successfully.');
-  }, []);
-
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  } catch (error) {
-    useEffect(() => {
-    toast.error('Something went wrong. Please try again later.');
-  }, []);
-  }
-};
-
+      toast.success('Thank you! Your message has been sent successfully.');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      toast.error('Something went wrong. Please try again later.');
+    }
+  };
 
   return (
     <section id="contact" className="mt-20">
