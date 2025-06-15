@@ -12,6 +12,9 @@ const InlineLoader = ({ size = 24 }: InlineLoaderProps) => {
       loop
       src="/save-loading.json"
       style={{ height: `${size}px`, width: `${size}px` }}
+      rendererSettings={{
+        preserveAspectRatio: 'xMidYMid slice'
+      }}
     />
   );
 };

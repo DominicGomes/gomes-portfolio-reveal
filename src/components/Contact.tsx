@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Send, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -145,10 +146,10 @@ const Contact = () => {
                 className="w-full bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold py-3 rounded-lg transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
-                  <>
+                  <div className="flex items-center justify-center">
                     <InlineLoader size={20} />
                     <span className="ml-2">Sending...</span>
-                  </>
+                  </div>
                 ) : (
                   <>
                     <Send className="w-5 h-5 mr-2" />
