@@ -57,7 +57,6 @@ const Navigation = () => {
           ? 'bg-portfolio-bg/95 backdrop-blur-md shadow-lg border-b border-portfolio-accent/20' 
           : 'bg-transparent'
       }`}
-      style={{ color: '#ffffff' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
@@ -71,7 +70,7 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - visible on md+ screens */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
               <button
@@ -79,31 +78,27 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`px-4 py-2 text-sm lg:text-base font-medium rounded-full transition-all duration-300 ${
                   activeSection === item.id 
-                    ? 'bg-portfolio-accent shadow-lg' 
-                    : 'hover:!text-blue-400 hover:bg-portfolio-accent/10'
+                    ? 'bg-portfolio-accent !text-white shadow-lg' 
+                    : '!text-white hover:!text-blue-400 hover:bg-portfolio-accent/10'
                 }`}
-                style={{ 
-                  color: activeSection === item.id ? '#ffffff' : '#e5e7eb'
-                }}
               >
                 {item.label}
               </button>
             ))}
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button - visible on screens smaller than md */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg hover:!text-blue-400 hover:bg-portfolio-accent/10 transition-all duration-300"
-              style={{ color: '#e5e7eb' }}
+              className="p-2 rounded-lg !text-white hover:!text-blue-400 hover:bg-portfolio-accent/10 transition-all duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - only visible when menu is open and on mobile */}
         <div className={`md:hidden transition-all duration-300 ease-in-out ${
           isOpen 
             ? 'max-h-96 opacity-100' 
@@ -116,12 +111,9 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`w-full text-left px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 ${
                   activeSection === item.id 
-                    ? 'bg-portfolio-accent shadow-lg' 
-                    : 'hover:!text-blue-400 hover:bg-portfolio-accent/10'
+                    ? 'bg-portfolio-accent !text-white shadow-lg' 
+                    : '!text-white hover:!text-blue-400 hover:bg-portfolio-accent/10'
                 }`}
-                style={{ 
-                  color: activeSection === item.id ? '#ffffff' : '#e5e7eb'
-                }}
               >
                 {item.label}
               </button>
