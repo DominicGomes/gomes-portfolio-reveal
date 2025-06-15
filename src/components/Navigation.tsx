@@ -51,11 +51,14 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-portfolio-bg/95 backdrop-blur-md shadow-lg border-b border-portfolio-accent/20' 
-        : 'bg-transparent'
-    }`}>
+    <nav 
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-portfolio-bg/95 backdrop-blur-md shadow-lg border-b border-portfolio-accent/20' 
+          : 'bg-transparent'
+      }`}
+      style={{ color: '#ffffff' }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo/Brand */}
@@ -76,9 +79,12 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`px-4 py-2 text-sm lg:text-base font-medium rounded-full transition-all duration-300 ${
                   activeSection === item.id 
-                    ? 'bg-portfolio-accent !text-white shadow-lg' 
-                    : '!text-gray-200 hover:!text-blue-400 hover:bg-portfolio-accent/10'
+                    ? 'bg-portfolio-accent shadow-lg' 
+                    : 'hover:!text-blue-400 hover:bg-portfolio-accent/10'
                 }`}
+                style={{ 
+                  color: activeSection === item.id ? '#ffffff' : '#e5e7eb'
+                }}
               >
                 {item.label}
               </button>
@@ -89,7 +95,8 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg !text-gray-200 hover:!text-blue-400 hover:bg-portfolio-accent/10 transition-all duration-300"
+              className="p-2 rounded-lg hover:!text-blue-400 hover:bg-portfolio-accent/10 transition-all duration-300"
+              style={{ color: '#e5e7eb' }}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -109,9 +116,12 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`w-full text-left px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 ${
                   activeSection === item.id 
-                    ? 'bg-portfolio-accent !text-white shadow-lg' 
-                    : '!text-gray-200 hover:!text-blue-400 hover:bg-portfolio-accent/10'
+                    ? 'bg-portfolio-accent shadow-lg' 
+                    : 'hover:!text-blue-400 hover:bg-portfolio-accent/10'
                 }`}
+                style={{ 
+                  color: activeSection === item.id ? '#ffffff' : '#e5e7eb'
+                }}
               >
                 {item.label}
               </button>
