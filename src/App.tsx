@@ -32,7 +32,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <ToastContainer 
-          position="top-right" 
+          position="bottom-right" 
           theme="dark"
           autoClose={5000}
           hideProgressBar={false}
