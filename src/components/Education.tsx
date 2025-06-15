@@ -42,9 +42,9 @@ const Education = () => {
         AOS.init({
             duration: 600,
             easing: 'ease-in-out',
-            once: false, // Animation will occur every time the element scrolls into view
+            once: true,
             offset: 50,
-            delay: 0
+            delay: 0 // Explicitly set to zero
         });
     }, []);
 

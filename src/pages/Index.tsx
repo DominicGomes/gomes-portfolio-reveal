@@ -12,11 +12,12 @@ import { SparklesCore } from '@/components/ui/sparkles';
 
 const Index = () => {
   useEffect(() => {
+    // Remove any delay from AOS initialization
     AOS.init({
       duration: 1000,
-      once: false, // Allow animations to trigger on scroll up as well
+      once: true,
       offset: 100,
-      delay: 0
+      delay: 0 // Explicitly set to zero
     });
   }, []);
 
