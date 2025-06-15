@@ -1,10 +1,10 @@
-
 import { useState } from 'react';
 import { Send, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import SectionHeader from './SectionHeader';
+import InlineLoader from './Contents/InlineLoader';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-toastify';
 
@@ -15,6 +15,7 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -30,6 +31,8 @@ const Contact = () => {
       toast.error('Please fill in all required fields.');
       return;
     }
+
+    setIsLoading(true);
 
     try {
       await emailjs.send(
@@ -51,6 +54,8 @@ const Contact = () => {
     } catch (error) {
       console.error('EmailJS Error:', error);
       toast.error('Something went wrong. Please try again later.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -80,6 +85,7 @@ const Contact = () => {
                     className="bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent"
                     placeholder="Your Name"
                     required
+                    disabled={isLoading}
                   />
                 </div>
                 <div>
@@ -95,6 +101,7 @@ const Contact = () => {
                     className="bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent"
                     placeholder="your.email@example.com"
                     required
+                    disabled={isLoading}
                   />
                 </div>
               </div>
@@ -111,6 +118,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent"
                   placeholder="What's this about?"
+                  disabled={isLoading}
                 />
               </div>
               
@@ -127,15 +135,26 @@ const Contact = () => {
                   className="bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent resize-none"
                   placeholder="Tell me about your project or how I can help..."
                   required
+                  disabled={isLoading}
                 />
               </div>
 
               <Button
                 type="submit"
-                className="w-full bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold py-3 rounded-lg transition-all duration-300"
+                disabled={isLoading}
+                className="w-full bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold py-3 rounded-lg transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                <Send className="w-5 h-5 mr-2" />
-                Send Message
+                {isLoading ? (
+                  <>
+                    <InlineLoader size={20} />
+                    <span className="ml-2">Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5 mr-2" />
+                    Send Message
+                  </>
+                )}
               </Button>
             </form>
           </div>
