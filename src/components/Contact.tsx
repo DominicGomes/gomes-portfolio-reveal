@@ -36,10 +36,12 @@ const Contact = () => {
         'dominic_gomes',      
         'template_677sw3e',     
         {
+          to_name: 'Dominic',
           from_name: formData.name,
-          reply_to: formData.email,
-          subject: formData.subject,
-          message: formData.message
+          from_email: formData.email,
+          subject: formData.subject || 'Contact Form Message',
+          message: formData.message,
+          reply_to: formData.email
         },
         'K6n6cZgLK3ukzK_2W' 
       );
@@ -47,6 +49,7 @@ const Contact = () => {
       toast.success('Thank you! Your message has been sent successfully.');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast.error('Something went wrong. Please try again later.');
     }
   };
