@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -51,45 +52,33 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-portfolio-bg/95 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+      scrolled 
+        ? 'bg-portfolio-bg/95 backdrop-blur-md shadow-lg border-b border-portfolio-accent/20' 
+        : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Desktop Navigation - Centered */}
-          <div className=" md:flex justify-center flex-1">
-            <div className="flex space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-portfolio-text hover:text-portfolio-accent transition-colors duration-300 font-medium ${
-                    activeSection === item.id ? 'text-portfolio-accent border-b-2 border-portfolio-accent' : ''
-                  }`}>
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div className="md:hidden">
+        <div className="flex justify-between items-center h-16 lg:h-20">
+          {/* Logo/Brand */}
+          <div className="flex-shrink-0">
             <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-portfolio-text hover:text-portfolio-accent transition-colors"
+              onClick={() => scrollToSection('home')}
+              className="text-xl lg:text-2xl font-montserrat font-bold text-portfolio-accent hover:text-portfolio-accent/80 transition-colors"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              Dominic
             </button>
           </div>
-        </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden bg-portfolio-bg/95 backdrop-blur-sm">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center justify-center flex-1">
+            <div className="flex space-x-1 lg:space-x-2 bg-gray-900/50 backdrop-blur-sm rounded-full px-6 py-3 border border-gray-700/50">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block px-3 py-2 text-portfolio-text hover:text-portfolio-accent transition-colors duration-300 font-medium w-full text-left ${
-                    activeSection === item.id ? 'text-portfolio-accent bg-portfolio-accent/10' : ''
+                  className={`px-4 py-2 text-sm lg:text-base font-medium rounded-full transition-all duration-300 ${
+                    activeSection === item.id 
+                      ? 'bg-portfolio-accent text-white shadow-lg' 
+                      : 'text-portfolio-text hover:text-portfolio-accent hover:bg-portfolio-accent/10'
                   }`}
                 >
                   {item.label}
@@ -97,7 +86,40 @@ const Navigation = () => {
               ))}
             </div>
           </div>
-        )}
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg text-portfolio-text hover:text-portfolio-accent hover:bg-portfolio-accent/10 transition-all duration-300"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isOpen 
+            ? 'max-h-96 opacity-100' 
+            : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className="px-2 pt-2 pb-4 space-y-2 bg-gray-900/95 backdrop-blur-md rounded-lg mt-2 border border-gray-700/50">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`w-full text-left px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 ${
+                  activeSection === item.id 
+                    ? 'bg-portfolio-accent text-white shadow-lg' 
+                    : 'text-portfolio-text hover:text-portfolio-accent hover:bg-portfolio-accent/10'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </nav>
   );

@@ -55,18 +55,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="mt-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20">
+      <div className="max-w-6xl mx-auto">
         <SectionHeader
           title="Get In "
           highlight="Touch"
           subtitle="Have a project in mind or want to collaborate? I'd love to hear from you!"
         />      
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mt-12">
           {/* Contact Form */}
-          <div data-aos="fade-right">
+          <div data-aos="fade-right" className="order-2 lg:order-1">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-portfolio-text mb-2">
                     Name *
@@ -77,7 +77,7 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent"
+                    className="w-full bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent h-12"
                     placeholder="Your Name"
                     required
                   />
@@ -92,7 +92,7 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent"
+                    className="w-full bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent h-12"
                     placeholder="your.email@example.com"
                     required
                   />
@@ -109,7 +109,7 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent"
+                  className="w-full bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent h-12"
                   placeholder="What's this about?"
                 />
               </div>
@@ -124,7 +124,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  className="bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent resize-none"
+                  className="w-full bg-gray-800/50 border-gray-700 text-portfolio-text placeholder-gray-400 focus:border-portfolio-accent resize-none"
                   placeholder="Tell me about your project or how I can help..."
                   required
                 />
@@ -132,7 +132,7 @@ const Contact = () => {
 
               <Button
                 type="submit"
-                className="w-full bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold py-3 rounded-lg transition-all duration-300"
+                className="w-full bg-portfolio-accent hover:bg-portfolio-accent/80 text-white font-semibold py-3 h-12 rounded-lg transition-all duration-300"
               >
                 <Send className="w-5 h-5 mr-2" />
                 Send Message
@@ -141,25 +141,25 @@ const Contact = () => {
           </div>
 
           {/* Contact Info & Social */}
-          <div className="space-y-8" data-aos="fade-left" data-aos-delay="200">
+          <div className="space-y-6 lg:space-y-8 order-1 lg:order-2" data-aos="fade-left" data-aos-delay="200">
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50">
               <h3 className="font-montserrat font-bold text-xl mb-4 text-portfolio-accent">
                 Let's Connect
               </h3>
-              <p className="text-portfolio-text/80 mb-6 leading-relaxed text-justify">
+              <p className="text-portfolio-text/80 mb-6 leading-relaxed text-sm sm:text-base">
                 I'm always open to discussing new opportunities, interesting projects, 
                 or just having a friendly chat about technology and development.
               </p>
               
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold text-portfolio-text mb-2">Email</h4>
-                  <p className="text-portfolio-text/70">dominicgomes24@gmail.com</p>
+                  <h4 className="font-semibold text-portfolio-text mb-2 text-sm sm:text-base">Email</h4>
+                  <p className="text-portfolio-text/70 text-sm sm:text-base break-all">dominicgomes24@gmail.com</p>
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold text-portfolio-text mb-2">Location</h4>
-                  <p className="text-portfolio-text/70">147/ J East Rajabaza, Farmgate, Dhaka</p>
+                  <h4 className="font-semibold text-portfolio-text mb-2 text-sm sm:text-base">Location</h4>
+                  <p className="text-portfolio-text/70 text-sm sm:text-base">147/ J East Rajabaza, Farmgate, Dhaka</p>
                 </div>
               </div>
             </div>
@@ -169,11 +169,11 @@ const Contact = () => {
               <h3 className="font-montserrat font-bold text-xl mb-4 text-portfolio-accent">
                 Find Me Online
               </h3>
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
+                  className="flex-1 border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white h-12"
                   onClick={() => window.open('https://linkedin.com/in/dominicgomes', '_blank')}
                 >
                   <Linkedin className="w-5 h-5 mr-2" />
@@ -182,7 +182,7 @@ const Contact = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
+                  className="flex-1 border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white h-12"
                   onClick={() => window.open('https://facebook.com/dominicgomes', '_blank')}
                 >
                   <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
