@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -276,4 +275,18 @@
   .touch-target {
     @apply p-3 min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
+}
+
+/* Navigation text visibility fix - maximum specificity */
+.nav-text-force-white {
+  color: #ffffff !important;
+}
+
+.nav-text-force-white:hover {
+  color: #60a5fa !important;
+}
+
+.nav-text-active {
+  color: #ffffff !important;
+  background-color: #3c799e !important;
 }

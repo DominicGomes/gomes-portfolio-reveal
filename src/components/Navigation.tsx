@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -78,8 +77,8 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`px-4 py-2 text-sm lg:text-base font-medium rounded-full transition-all duration-300 ${
                   activeSection === item.id 
-                    ? 'bg-portfolio-accent !text-white shadow-lg' 
-                    : '!text-white hover:!text-blue-400 hover:bg-portfolio-accent/10'
+                    ? 'nav-text-active shadow-lg' 
+                    : 'nav-text-force-white hover:bg-portfolio-accent/10'
                 }`}
               >
                 {item.label}
@@ -91,7 +90,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg !text-white hover:!text-blue-400 hover:bg-portfolio-accent/10 transition-all duration-300"
+              className="p-2 rounded-lg nav-text-force-white hover:bg-portfolio-accent/10 transition-all duration-300"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -111,8 +110,8 @@ const Navigation = () => {
                 onClick={() => scrollToSection(item.id)}
                 className={`w-full text-left px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 ${
                   activeSection === item.id 
-                    ? 'bg-portfolio-accent !text-white shadow-lg' 
-                    : '!text-white hover:!text-blue-400 hover:bg-portfolio-accent/10'
+                    ? 'nav-text-active shadow-lg' 
+                    : 'nav-text-force-white hover:bg-portfolio-accent/10'
                 }`}
               >
                 {item.label}
