@@ -69,22 +69,20 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center justify-center flex-1">
-            <div className="flex space-x-1 lg:space-x-2 bg-gray-900/50 backdrop-blur-sm rounded-full px-6 py-3 border border-gray-700/50">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`px-4 py-2 text-sm lg:text-base font-medium rounded-full transition-all duration-300 ${
-                    activeSection === item.id 
-                      ? 'bg-portfolio-accent text-white shadow-lg' 
-                      : 'text-portfolio-text hover:text-portfolio-accent hover:bg-portfolio-accent/10'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`px-4 py-2 text-sm lg:text-base font-medium rounded-full transition-all duration-300 ${
+                  activeSection === item.id 
+                    ? 'bg-portfolio-accent text-white shadow-lg' 
+                    : 'text-portfolio-text hover:text-portfolio-accent hover:bg-portfolio-accent/10'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
           {/* Mobile menu button */}
