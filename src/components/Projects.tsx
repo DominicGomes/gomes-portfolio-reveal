@@ -36,8 +36,8 @@ const Projects = () => {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: true,
-      delay: 0 // Explicitly set to zero
+      once: false, // Animation will occur every time the element scrolls into view
+      delay: 0
     });
   }, []);
 
