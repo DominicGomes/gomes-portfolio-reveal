@@ -241,3 +241,26 @@
 .slide-in-bar {
   animation: slideInBar 1.5s ease-out both;
 }
+html,
+body {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;    
+  overflow-y: scroll;        
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;             
+}
+/* Custom class for smooth scroll + scrollbar hiding */
+.scroll-smooth-hidden {
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;      /* IE 10+ */
+  scrollbar-width: none;         /* Firefox */
+  overflow-y: scroll;
+}
+
+.scroll-smooth-hidden::-webkit-scrollbar {
+  display: none;                 /* Chrome, Safari */
+}

@@ -8,12 +8,12 @@ const ConsoleText = ({ prefix, highlightText, id, highlightClass }) => {
   useEffect(() => {
     let visible = true;
     let letterCount = prefix.length;
-    let x = 1; 
+    let x = 1;
     let waiting = false;
-    const fullText = prefix + highlightText; 
+    const fullText = prefix + highlightText;
     const target = targetRef.current;
     if (target) {
-      target.innerHTML = prefix; 
+      target.innerHTML = prefix;
     }
 
     const textInterval = setInterval(() => {
@@ -22,14 +22,14 @@ const ConsoleText = ({ prefix, highlightText, id, highlightClass }) => {
       if (letterCount === prefix.length && !waiting && x === -1) {
         waiting = true;
         setTimeout(() => {
-          x = 1; 
+          x = 1;
           letterCount += x;
           waiting = false;
         }, 1000);
       } else if (letterCount === fullText.length + 1 && !waiting && x === 1) {
         waiting = true;
         setTimeout(() => {
-          x = -1; // Switch to deleting
+          x = -1;
           letterCount += x;
           waiting = false;
         }, 1000);
@@ -67,10 +67,10 @@ const ConsoleText = ({ prefix, highlightText, id, highlightClass }) => {
 
   return (
     <div className="console-container">
-      <span id={id} ref={targetRef}></span>
-      <div className="console-underscore" id="console" ref={consoleRef}>
-        _
-      </div>
+      <span id={id} ref={targetRef} className="console-text"></span>
+      <span className="console-underscore" id="console" ref={consoleRef}>
+        |
+      </span>
     </div>
   );
 };

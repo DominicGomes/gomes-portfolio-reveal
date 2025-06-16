@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ExternalLink, Github, Smartphone, Monitor, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Icon } from '@iconify/react';
+import { Smartphone, Monitor, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Project } from '@/types/Project';
 import medipos1 from '/medipos1.png';
 import medipos2 from '/medipos2.png';
@@ -21,7 +22,7 @@ import erpImg6 from '/erp6.png';
 import lionCinema from '/lionCinema1.png';
 import lionCinema2 from '/lionCinema2.png';
 import lionCinema3 from '/lionCinema3.png';
-import medbox1 from '/medboxImg.png';
+// import medbox1 from '/medboxImg.png';
 import medbox2 from '/medbox2.png';
 import medbox3 from '/medbox3.png';
 import medbox4 from '/medbox4.png';
@@ -64,7 +65,7 @@ const projects: Project[] = [
     longDescription:
       'Medbox is a medical platform tailored for businesses, connecting healthcare providers with pharmaceutical companies. The app ensures secure data handling and real-time updates for efficient business management.',
     image: Medbox,
-    images: [medbox1, medbox2, medbox3, medbox4, medbox5],
+    images: [medbox2, medbox3, medbox4, medbox5],
     playStoreUrl: 'https://play.google.com/store/apps/details?id=com.pulsetechltd.medbox&hl=en',
     appStoreUrl: 'https://apps.apple.com/us/app/medbox-bd/id1641085153',
     category: 'android',
@@ -302,6 +303,7 @@ interface ProjectModalProps {
 
 const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false); 
 
   useEffect(() => {
     setIsVisible(true);
@@ -310,6 +312,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
       document.body.style.overflow = 'unset';
     };
   }, []);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    if (e.currentTarget.scrollTop > 0) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
 
   const handleClose = () => {
     setIsVisible(false);
@@ -320,13 +330,15 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity duration-300 ${isVisible ? 'opacity-100' : 'opacity-0'
-        }`}
+      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity duration-300 ${
+        isVisible ? 'opacity-100' : 'opacity-0'
+      }`}
       onClick={handleClose}
     >
       <div
-        className={`relative w-full max-w-4xl max-h-[90vh] bg-gray-800/80 backdrop-blur-md border border-gray-700/50 rounded-lg overflow-hidden transition-all duration-300 ${isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-          }`}
+        className={`relative w-full max-w-4xl max-h-[90vh] bg-gray-800/80 backdrop-blur-md border border-gray-700/50 rounded-lg overflow-hidden transition-all duration-300 ${
+          isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -346,7 +358,11 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
         </div>
 
         {/* Content */}
-        <div className="overflow-y-auto max-h-[calc(90vh-120px)]">
+        <div
+          className="max-h-[calc(90vh-120px)] pr-2 scroll-smooth-hidden overflow-y-auto"
+          onScroll={handleScroll} // Attach scroll event listener
+        >
+          <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-10" />
           <div className="p-6 space-y-8">
             {/* Project Images + Action Buttons */}
             <div className="relative">
@@ -379,7 +395,6 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
                 </div>
               )}
             </div>
-
 
             {/* Description */}
             <div>
@@ -421,6 +436,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
               </div>
             </div>
 
+            {/* Scroll Indicator - Conditionally Rendered */}
+            {!isScrolled && (
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white text-xs opacity-70">
+                <Icon icon="icon-park-solid:down-two" className="text-xl text-portfolio-accent/70" />
+              </div>
+            )}
           </div>
         </div>
       </div>
