@@ -31,7 +31,7 @@ const Experience = () => {
       offset: 100,
       delay: 0 
     });
-  }, []);
+  }, []); 
 
   return (
     <section id="experience" className="mt-20 py-20">
