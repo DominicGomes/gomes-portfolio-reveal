@@ -37,6 +37,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import Aos from 'aos';
 import { SparklesCore } from '../ui/sparkles';
+import { motion } from 'framer-motion';
 
 const projects: Project[] = [
   {
@@ -457,26 +458,44 @@ interface ProjectTabsProps {
 const ProjectTabs: React.FC<ProjectTabsProps> = ({ activeTab, onTabChange }) => (
   <div className="flex justify-center mb-12">
     <div className="bg-white/5 backdrop-blur-md rounded-lg p-2 border border-white/10">
-      <div className="flex gap-2">
-        <button
-          onClick={() => onTabChange('web')}
-          className={`flex items-center gap-2 px-4 py-2  rounded-md transition-all duration-300 ${activeTab === 'web'
-            ? 'bg-white text-slate-900 shadow-lg'
-            : 'text-white hover:bg-portfolio-accent'
-            }`}
-        >
-          <Monitor size={20} />
-          <span className="font-medium">Web Projects</span>
-        </button>
+      <div className="flex gap-2 relative">
         <button
           onClick={() => onTabChange('android')}
-          className={`flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-300 ${activeTab === 'android'
-            ? 'bg-white text-slate-900 shadow-lg'
-            : 'text-white hover:bg-portfolio-accent'
-            }`}
+          className={`relative flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-300 ${
+            activeTab === 'android'
+              ? 'bg-white text-slate-900 shadow-lg'
+              : 'text-white hover:bg-portfolio-accent'
+          }`}
         >
           <Smartphone size={20} />
           <span className="font-medium">Android Apps</span>
+          {activeTab === 'android' && (
+            <motion.div
+              layoutId="activeTab"
+              className="absolute inset-0 bg-white rounded-md shadow-lg -z-10"
+              initial={false}
+              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+            />
+          )}
+        </button>
+        <button
+          onClick={() => onTabChange('web')}
+          className={`relative flex items-center gap-2 px-4 py-2 rounded-md transition-all duration-300 ${
+            activeTab === 'web'
+              ? 'bg-white text-slate-900 shadow-lg'
+              : 'text-white hover:bg-portfolio-accent'
+          }`}
+        >
+          <Monitor size={20} />
+          <span className="font-medium">Web Projects</span>
+          {activeTab === 'web' && (
+            <motion.div
+              layoutId="activeTab"
+              className="absolute inset-0 bg-white rounded-md shadow-lg -z-10"
+              initial={false}
+              transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+            />
+          )}
         </button>
       </div>
     </div>
@@ -485,7 +504,7 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ activeTab, onTabChange }) => 
 
 // ========== Main Page ==========
 const ProjectDetails: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'web' | 'android'>('web');
+  const [activeTab, setActiveTab] = useState<'android' | 'web'>('android');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filteredProjects = projects.filter((project) =>
