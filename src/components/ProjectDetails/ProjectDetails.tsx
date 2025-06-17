@@ -499,7 +499,7 @@ const ProjectDetails: React.FC = () => {
   }, []);
   return (
     <div className="relative bg-portfolio-bg text-portfolio-text min-h-screen font-open-sans overflow-hidden">
-      <SparklesCore
+      {/* <SparklesCore
         id="tsparticlesfullpage"
         background="transparent"
         minSize={0.6}
@@ -507,7 +507,7 @@ const ProjectDetails: React.FC = () => {
         particleDensity={120}
         className="absolute inset-0 w-full h-full z-10"
         particleColor="#FFFFFF"
-      />
+      /> */}
       {/* Background Layer */}
       <div className="absolute inset-0 z-0 bg-gradient-to-br from-portfolio-bg via-gray-900/80 to-portfolio-accent/20"></div>
 
