@@ -36,12 +36,14 @@ const Experience = () => {
   return (
     <section id="experience" className="mt-20 py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
+       <div className="px-4 sm:px-6 lg:px-0">
+         <SectionHeader
           title="Working "
           highlight="Experience"
           subtitle="A journey through my professional career and the impact I've made"
         />
 
+       </div>
         <div className="relative">
           {/* Timeline Line */}
           <div className="absolute left-4 lg:left-1/2 transform lg:-translate-x-1/2 h-full w-1 bg-portfolio-accent/30"></div>

@@ -9,6 +9,7 @@ import InlineLoader from './Contents/InlineLoader';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
+import { Icon } from '@iconify/react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -63,15 +64,21 @@ const Contact = () => {
 
   return (
     <section id="contact" className="mt-20 mb-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          title="Get In "
-          highlight="Touch"
-          subtitle="Have a project in mind or want to collaborate? I'd love to hear from you!"
-        />
+      <div className="max-w-4xl mx-auto sm:px-8">
+        <div className="px-4 sm:px-6 lg:px-0">
+          <SectionHeader
+            title="Get In "
+            highlight="Touch"
+            subtitle="Have a project in mind or want to collaborate? I'd love to hear from you!"
+          />
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div data-aos="fade-right">
+          <div
+            data-aos="fade-right"
+            className="relative w-full max-w-[25rem] sm:max-w-[28rem] md:max-w-[36rem] lg:max-w-none mx-auto px-4"
+          >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -166,7 +173,11 @@ const Contact = () => {
           </div>
 
           {/* Contact Info & Social */}
-          <div className="space-y-8" data-aos="fade-left" data-aos-delay="200">
+          <div
+            className="space-y-8 relative w-full max-w-[24.5rem] sm:max-w-[28rem] md:max-w-[36rem] lg:max-w-none mx-auto px-4"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700/50">
               <h3 className="font-montserrat font-bold text-xl mb-4 text-portfolio-accent">
                 Let's Connect
@@ -194,28 +205,30 @@ const Contact = () => {
               <h3 className="font-montserrat font-bold text-xl mb-4 text-portfolio-accent">
                 Find Me Online
               </h3>
-              <div className="flex space-x-4">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
-                  onClick={() => window.open('dominic-gomes-443a13252/', '_blank')}
-                >
-                  <Linkedin className="w-5 h-5 mr-2" />
-                  LinkedIn
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white"
-                  onClick={() => window.open('https://www.facebook.com/DominicGomes24', '_blank')}
-                >
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                  </svg>
-                  Facebook
-                </Button>
+              <div className="px-4 sm:px-0">
+                <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white min-w-[155px] px-4"
+                    onClick={() => window.open('https://www.linkedin.com/in/dominic-gomes-443a13252/', '_blank')}
+                  >
+                    <Icon icon="bi:linkedin" className="text-4xl" />
+                    LinkedIn
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white min-w-[140px] px-4"
+                    onClick={() => window.open('https://www.facebook.com/DominicGomes24', '_blank')}
+                  >
+                    <Icon icon="akar-icons:facebook-fill" className="text-4xl" />
+                    Facebook
+                  </Button>
+                </div>
               </div>
+
             </div>
           </div>
         </div>

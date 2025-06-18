@@ -149,11 +149,13 @@ const Projects = () => {
   return (
     <section id="projects">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
+        <div className="px-4 sm:px-6 lg:px-0">
+          <SectionHeader
           title="Project"
           highlight="Experience"
           subtitle="A showcase of applications I've built with passion and precision"
         />
+        </div>
         <div className="flex justify-center flex-wrap gap-8">
           {projects.map((project, index) => (
             <div key={index} className="w-full sm:w-1/2 lg:w-1/3 max-w-sm">
@@ -165,7 +167,7 @@ const Projects = () => {
             </div>
           ))}
         </div>
-         <div className="mt-10 text-right">
+         <div className="mt-10 text-center 2xl:text-right">
           <Link
             to="/project-details"
             className="inline-block px-4 py-2 text-portfolio-accent border border-portfolio-accent rounded-md font-semibold shadow-md hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm">

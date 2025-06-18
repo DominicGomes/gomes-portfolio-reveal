@@ -74,12 +74,14 @@ const Tools = () => {
   return (
     <section id="tools" className="mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
+        <div className="px-4 sm:px-6 lg:px-0">
+          <SectionHeader
           title="Technical"
           highlight="Expertise"
           subtitle="Technologies and tools I use to bring ideas to life"
         />
-
+        </div>
+        {/* Swiper Container */}
         <div className="w-full flex justify-center">
           <div className="w-full max-w-[1400px]">
             <Swiper

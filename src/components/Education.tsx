@@ -49,15 +49,15 @@ const Education = () => {
     }, []);
 
     return (
-        <section id="education" className="mt-20 py-10">
-            <div className="max-w-4xl mx-auto">
-                <SectionHeader
-                    title="Educational "
-                    highlight="Background"
-                    subtitle="A journey through my professional career and the impact I've made"
-                />
-
-                {/* Education List */}
+        <section id="education" className="mt-20 py-20">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="px-4 sm:px-6 lg:px-0">
+                    <SectionHeader
+                        title="Educational "
+                        highlight="Background"
+                        subtitle="A journey through my professional career and the impact I've made"
+                    />
+                </div>
                 <div className="space-y-6">
                     {educationData.map((education, index) => (
                         <EducationCard
