@@ -9,18 +9,17 @@ import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import Education from '@/components/Education';
 import { SparklesCore } from '@/components/ui/sparkles';
-
+import useLenis from '@/hooks/useLenis';
 const Index = () => {
   useEffect(() => {
-    // Remove any delay from AOS initialization
     AOS.init({
       duration: 1000,
       once: true,
       offset: 100,
-      delay: 0 // Explicitly set to zero
+      delay: 0 
     });
   }, []);
-
+  useLenis();
   return (
     <div className="relative bg-portfolio-bg text-portfolio-text min-h-screen font-open-sans overflow-hidden">
       {/* Full-page gradient background */}
