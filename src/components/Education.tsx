@@ -31,7 +31,7 @@ const educationData: EducationEntry[] = [
         image: "/hsc-certificate.jpg"
     },
     {
-        institution: "Bandura Holy high School",
+        institution: "Bandura Holy School & College",
         subject: "S.S.C (Business Studies)",
         address: "Nawabgonj, Dhaka",
         passingYear: "2016",
@@ -44,34 +44,33 @@ const educationData: EducationEntry[] = [
 const EducationCard: React.FC<{ education: EducationEntry; index: number }> = ({ education, index }) => {
     return (
         <div
-            className="relative group inset-0 bg-gray-800/60 border border-gray-700/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            className="relative group inset-0 bg-gray-800/60  p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             data-aos="fade-up"
             data-aos-delay={index * 100}
-            style={{ position: 'relative', zIndex: 0 }} 
         >
             <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-5 rounded-lg pointer-events-none"></div>
 
             <div className="flex items-center space-x-3">
-                <GraduationCap className="h-6 w-6 text-portfolio-accent" />
-                <h3 className="text-lg font-semibold">{education.subject}</h3>
+                <GraduationCap className="h-6 w-6 text-blue-600" />
+                <h3 className="text-lg font-semibold">{education.institution}</h3>
             </div>
-            <p className="mt-2 text-gray-500">{education.institution}</p>
-            <p className="text-sm text-gray-600">{education.address}</p>
+            <p className="mt-2 text-gray-600">{education.subject}</p>
+            <p className="text-sm text-gray-500">{education.address}</p>
             <div className="mt-2 flex justify-between text-sm text-gray-600">
                 <span>Year: {education.passingYear}</span>
                 <span className="text-white">Result: {education.result}</span>
             </div>
             {/* Tooltip with image */}
-            <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity duration-300 -top-60 left-1/2 transform -translate-x-1/2 z-1000">
-                <div className="bg-gray-800/60 p-2 rounded-lg shadow-lg border border-gray-700/50 backdrop-blur-md">
+            <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity duration-300 -top-24 left-1/2 transform -translate-x-1/2 z-10">
+                <div className="bg-gray-800/60 p-2 rounded-lg shadow-lg border">
                     <img
                         src={education.image}
                         alt={`${education.institution} certificate`}
-                        className="w-78 h-58 object-cover rounded" 
+                        className="w-72 h-54 object-cover rounded"
                     />
                 </div>
                 {/* Tooltip arrow */}
-                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-8px] w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-800/60"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-8px] w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent"></div>
             </div>
         </div>
     );
