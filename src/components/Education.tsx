@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { GraduationCap } from "lucide-react";
-import EducationCard from "./EducationCard";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SectionHeader from "./SectionHeader";
@@ -11,6 +10,7 @@ interface EducationEntry {
     address: string;
     passingYear: string;
     result: string;
+    image: string;
 }
 
 const educationData: EducationEntry[] = [
@@ -19,23 +19,63 @@ const educationData: EducationEntry[] = [
         subject: "M.Sc in Computing & Information System",
         address: "Daffodil Smart City, Birulia, Savar, Dhaka",
         passingYear: "2022",
-        result: "3.43/4.0"
+        result: "3.43/4.0",
+        image: "/bachelor-certificate.png"
     },
     {
-        institution: "Nore Dame College",
+        institution: "Notre Dame College",
         subject: "H.S.C (Business Studies)",
         address: "Toyenbee Circular Road, Dhaka",
         passingYear: "2018",
-        result: "4.83/5.0"
+        result: "4.83/5.0",
+        image: "/hsc-certificate.jpg"
     },
     {
-        institution: "Bandura Holy School & College",
+        institution: "Bandura Holy high School",
         subject: "S.S.C (Business Studies)",
         address: "Nawabgonj, Dhaka",
         passingYear: "2016",
-        result: "4.72/5.0"
+        result: "4.72/5.0",
+        image: "/ssc-certificate.jpg"
     }
 ];
+
+// Sample EducationCard component with hover tooltip
+const EducationCard: React.FC<{ education: EducationEntry; index: number }> = ({ education, index }) => {
+    return (
+        <div
+            className="relative group inset-0 bg-gray-800/60 border border-gray-700/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+            style={{ position: 'relative', zIndex: 0 }} 
+        >
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-5 rounded-lg pointer-events-none"></div>
+
+            <div className="flex items-center space-x-3">
+                <GraduationCap className="h-6 w-6 text-blue-600" />
+                <h3 className="text-lg font-semibold">{education.subject}</h3>
+            </div>
+            <p className="mt-2 text-gray-500">{education.institution}</p>
+            <p className="text-sm text-gray-600">{education.address}</p>
+            <div className="mt-2 flex justify-between text-sm text-gray-600">
+                <span>Year: {education.passingYear}</span>
+                <span className="text-white">Result: {education.result}</span>
+            </div>
+            {/* Tooltip with image */}
+            <div className="absolute invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-opacity duration-300 -top-60 left-1/2 transform -translate-x-1/2 z-1000">
+                <div className="bg-gray-800/60 p-2 rounded-lg shadow-lg border border-gray-700/50 backdrop-blur-md">
+                    <img
+                        src={education.image}
+                        alt={`${education.institution} certificate`}
+                        className="w-78 h-58 object-cover rounded" 
+                    />
+                </div>
+                {/* Tooltip arrow */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-8px] w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-gray-800/60"></div>
+            </div>
+        </div>
+    );
+};
 
 const Education = () => {
     useEffect(() => {
@@ -44,7 +84,7 @@ const Education = () => {
             easing: 'ease-in-out',
             once: true,
             offset: 50,
-            delay: 0 // Explicitly set to zero
+            delay: 0
         });
     }, []);
 
@@ -71,4 +111,5 @@ const Education = () => {
         </section>
     );
 };
+
 export default Education;
