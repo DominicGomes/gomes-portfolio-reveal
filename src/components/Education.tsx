@@ -52,7 +52,7 @@ const EducationCard: React.FC<{ education: EducationEntry; index: number }> = ({
             <div className="absolute inset-0 bg-black/30 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-5 rounded-lg pointer-events-none"></div>
 
             <div className="flex items-center space-x-3">
-                <GraduationCap className="h-6 w-6 text-blue-600" />
+                <GraduationCap className="h-6 w-6 text-portfolio-accent" />
                 <h3 className="text-lg font-semibold">{education.subject}</h3>
             </div>
             <p className="mt-2 text-gray-500">{education.institution}</p>
