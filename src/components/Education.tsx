@@ -54,8 +54,8 @@ const EducationCard: React.FC<{ education: EducationEntry; index: number }> = ({
                 <GraduationCap className="h-6 w-6 text-portfolio-accent" />
                 <h3 className="text-lg font-semibold">{education.institution}</h3>
             </div>
-            <p className="mt-2 text-gray-600">{education.subject}</p>
-            <p className="text-sm text-gray-500">{education.address}</p>
+            <p className="mt-2 text-gray-500">{education.subject}</p>
+            <p className="text-sm text-gray-600">{education.address}</p>
             <div className="mt-2 flex justify-between text-sm text-gray-600">
                 <span>Year: {education.passingYear}</span>
                 <span className="text-white">Result: {education.result}</span>
