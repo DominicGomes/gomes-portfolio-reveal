@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/navigation'; // We'll define @keyframes here
+import 'swiper/css/navigation';
 
 const Tools = () => {
   const tools = [
@@ -62,7 +62,6 @@ const Tools = () => {
       description: "Dynamic Web Development Language",
       color: "from-yellow-400 to-yellow-500",
     },
-
     {
       name: "Java",
       icon: "logos:java",
@@ -76,10 +75,10 @@ const Tools = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="px-4 sm:px-6 lg:px-0">
           <SectionHeader
-          title="Technical"
-          highlight="Expertise"
-          subtitle="Technologies and tools I use to bring ideas to life"
-        />
+            title="Technical"
+            highlight="Expertise"
+            subtitle="Technologies and tools I use to bring ideas to life"
+          />
         </div>
         {/* Swiper Container */}
         <div className="w-full flex justify-center">
@@ -88,17 +87,18 @@ const Tools = () => {
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
-                pauseOnMouseEnter: true
+                pauseOnMouseEnter: true,
               }}
               loop={true}
               grabCursor={true}
               slidesPerView={1}
               spaceBetween={30}
               breakpoints={{
-                640: { slidesPerView: 2 },
-                768: { slidesPerView: 3 },
-                1024: { slidesPerView: 4 },
-                1280: { slidesPerView: 5 },
+                320: { slidesPerView: 2 }, // 2 slides for mobile
+                640: { slidesPerView: 3 }, // 3 slides for small screens
+                768: { slidesPerView: 4 }, // 4 slides for medium screens
+                1024: { slidesPerView: 5 }, // 5 slides for large screens
+                1280: { slidesPerView: 5 }, // 5 slides for extra-large screens
               }}
               navigation={{
                 nextEl: ".swiper-button-next",
@@ -106,24 +106,27 @@ const Tools = () => {
               }}
               speed={800}
               modules={[Navigation, Autoplay]}
-              className="">
+              className=""
+            >
               {tools.map((tool, index) => (
                 <SwiperSlide key={index}>
                   <div className="relative group flex flex-col items-center transition-all duration-300">
-
                     {/* Card */}
-                    <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 shadow-lg border border-gray-700/50 hover:border-white/40 transition-all duration-300 w-full h-[240px] group-hover:h-[230px] flex flex-col justify-between overflow-hidden">
-
+                    <div className="relative bg-gray-800/50 backdrop-blur-sm rounded-lg p-4 sm:p-6 shadow-lg border border-gray-700/50 hover:border-white/40 transition-all duration-300 w-full h-[220px] group-hover:h-[210px] flex flex-col justify-center items-center overflow-hidden">
                       {/* Gradient Overlay */}
                       <div className={`absolute inset-0 bg-gradient-to-br ${tool.color} opacity-0 group-hover:opacity-10 rounded-lg transition-opacity duration-300`} />
 
                       {/* Content */}
-                      <div className="relative z-10 transition-all duration-300">
-                        <div className="flex justify-center mb-4">
-                          <Icon icon={tool.icon} className="text-4xl text-white" />
+                      <div className="relative z-10 flex flex-col justify-center items-center transition-all duration-300">
+                        <div className="flex justify-center mb-2 sm:mb-4">
+                          <Icon icon={tool.icon} className="text-3xl sm:text-4xl text-white" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-2 text-center">{tool.name}</h3>
-                        <p className="text-sm text-gray-300 text-center leading-relaxed">{tool.description}</p>
+                        <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-1 sm:mb-2 text-center">
+                          {tool.name}
+                        </h3>
+                        <p className="text-xs sm:text-sm text-gray-300 text-center leading-relaxed">
+                          {tool.description}
+                        </p>
                       </div>
 
                       {/* Glow Effect */}
@@ -131,10 +134,11 @@ const Tools = () => {
                     </div>
 
                     {/* Line */}
-                    <div className={`mt-2 h-2 w-4/5 bg-gradient-to-r ${tool.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+                    <div
+                      className={`mt-2 h-2 w-4/5 bg-gradient-to-r ${tool.color} rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                    />
                   </div>
                 </SwiperSlide>
-
               ))}
             </Swiper>
           </div>
