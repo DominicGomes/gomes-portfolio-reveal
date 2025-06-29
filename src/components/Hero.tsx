@@ -22,7 +22,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center mt-20 py-20 relative overflow-hidden">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center max-md:mt-20 max-md:py-20 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           <div className="md:w-[100%] flex justify-center md:justify-end">
@@ -51,6 +54,10 @@ const Hero = () => {
                 highlightClass="text-portfolio-accent"
               />
             </h1>
+            {/* Down Arrow for Mobile Screens */}
+            <div className="block sm:hidden mt-4 animate-bounce" data-aos="fade-up" data-aos-delay="800">
+              <Icon icon="icon-park-solid:down-two" className="text-xl text-portfolio-accent/70 mx-auto" />
+            </div>
             <p className="text-lg lg:text-xl mb-8 leading-relaxed text-portfolio-text/90 text-justify">
               I'm a dedicated Software Engineer with over 2+ years of experience in building robust and user-focused solutions.
               Specializing in Android development and back-end web development, I have a proven track record of delivering
@@ -59,7 +66,8 @@ const Hero = () => {
             <div className="flex justify-center lg:justify-start flex-wrap gap-4">
               <Button
                 onClick={scrollToExperience}
-                className="text-portfolio-accent border border-portfolio-accent rounded-md font-semibold bg-gradient-to-tr from-portfolio-accent/30 to-transparent hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm px-8 py-3">
+                className="text-portfolio-accent border border-portfolio-accent rounded-md font-semibold bg-gradient-to-tr from-portfolio-accent/30 to-transparent hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm px-8 py-3"
+              >
                 <Briefcase className="w-4 h-4" />
                 Explore My Work
               </Button>
@@ -74,7 +82,8 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-20 mt-6 sm:mt-0" data-aos="fade-up" data-aos-delay="800">
+      {/* Down Arrow for Larger Screens */}
+      <div className="hidden sm:block absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce z-20" data-aos="fade-up" data-aos-delay="800">
         <Icon icon="icon-park-solid:down-two" className="text-xl text-portfolio-accent/70" />
       </div>
     </section>
