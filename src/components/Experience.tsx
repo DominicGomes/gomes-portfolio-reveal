@@ -8,11 +8,11 @@ const Experience = () => {
     {
       title: "Junior Software Engineer",
       company: "The Christian Cooperative Credit Union Limited",
-      duration: "2024 Apr - Present",
+      duration: "2024 Apr - 2026 March",
       address:
         "Rev. Fr.Charles J. Young Bhaban, 173/1/A, East Tejturi Bazar, Tejgaon, Dhaka",
       description:
-        "As a junior software engineer for a widely known credit union, I work in C# ASP.NET MVC 5 framework, adept at designing and developing robust and secure web applications. Have intermediate knowledge in leveraging MVC architecture to create efficient server-side solutions.",
+        "I worked with C# and the ASP.NET MVC 5 framework, contributing to the ongoing development and maintenance of a large-scale ERP system. My responsibilities included enhancing existing modules, improving system functionality based on business requirements, and identifying and resolving production issues to ensure smooth and reliable performance. I also implemented secure server-side solutions using MVC architecture, along with supporting debugging, testing, and troubleshooting to maintain application stability and improve user experience.",
     },
     {
       title: "Assistant Software Engineer",

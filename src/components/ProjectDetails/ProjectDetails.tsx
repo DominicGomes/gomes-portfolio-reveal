@@ -33,7 +33,9 @@ import Medbox from '/medboxImg.png';
 import MediPOS from '/MediPos.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+// @ts-ignore: allow side-effect CSS import without type declarations
 import 'swiper/css';
+// @ts-ignore: allow side-effect CSS import without type declarations
 import 'swiper/css/navigation';
 import Aos from 'aos';
 import { SparklesCore } from '../ui/sparkles';
