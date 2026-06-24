@@ -72,7 +72,7 @@ const Hero = () => {
                 Explore My Work
               </Button>
               <Button
-                onClick={() => window.open('/RESUME.pdf', '_blank')}
+                onClick={() => window.open('/Resume_Dominic_Cleary_Gomes.pdf', '_blank')}
                 className="text-portfolio-accent border border-portfolio-accent rounded-md font-semibold bg-gradient-to-tr from-portfolio-accent/30 to-transparent hover:bg-portfolio-accent hover:text-white transition-colors duration-300 text-sm px-6 py-3"
               >
                 <Icon icon="pepicons-pop:cv" />
